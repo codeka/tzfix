@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TimeZone Fix Options</title>
+		<style>
+			body {
+				font-family: arial, sans-serif;
+			}
+
+			#content {
+				width: 400pt;
+				margin: 0 auto;
+			}
+
+			h1 { 
+				font-family: times, times new roman, serif;
+				color: #a00;
+			}
+
+			fieldset {
+				border: solid 1px #999;
+				border-radius: 5px;
+			}
+			fieldset legend {
+				color: #a00;
+				font-weight: bold;
+				padding: 0 0.5em;
+			}
+
+			#localTimeZone {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<section id="content">
+			<h1>TimeZone Fix Options</h1>
+
+			<fieldset>
+				<legend>Your local timezone</legend>
+				<p>Your local timezone is used when you click the "now" button to determine
+				what the "from" timezone should automatically be set to. Technically, it doesn't
+				<em>have to</em> be your local timezone, because TimeZone Fix will choose the
+				current time in whatever timezone you specify here.</p>
+
+				<select id="localTimeZone" />
+			</fieldset>
+		</section>
+
+		<script src="jquery-1.7.2.min.js"></script>
+		<script src="options.js"></script>
+	</body>
+</html>

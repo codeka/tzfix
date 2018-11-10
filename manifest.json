@@ -1,0 +1,29 @@
+{
+   "background": {
+      "scripts": [ "date.js", "all_cities.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content_script.js" ],
+      "matches": [ "http://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "description": "Allows for easy timezone conversion of date/time values in the pages you visit.",
+   "icons": {
+      "128": "icon-128.png",
+      "16": "icon.png",
+      "48": "icon-48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDSlSjjA+a9vHm/OIGCDumbm976btMYOkHq0pmxYYyEQnv8jriXFCp5FJwOgSxFAkOK+bFxykg3IOvzAozn5bHvQ8nYrvCBB1XoTOo8+6doZqtIT3x9CenbTyf4AGQldbRXrJ/NR7PxPTxHwrWtqu+8cLO3/HbzGkHHvJqJlKxC+QIDAQAB",
+   "manifest_version": 2,
+   "name": "TimeZone Fix",
+   "options_page": "options.html",
+   "permissions": [ "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.8.2"
+}

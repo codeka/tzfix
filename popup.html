@@ -1,0 +1,115 @@
+
+<style>
+	body {
+		height: 300px;
+	}
+
+	#container {
+		width: 400px;
+		height: 280px;
+		border-radius: 5px;
+		border: solid 1px #999;
+	}
+
+	#container legend {
+		font-weight: bold;
+		color: #a00;
+		font-size: 1.2em;
+		padding: 0 0.5em;
+	}
+
+	table {
+		border: 0;
+		font-family: arial, sans-serif;
+		font-size: 10pt;
+	}
+
+	input[type=text] {
+		width: 300px;
+		height: 20px;
+		border: solid 1px #999;
+	}
+
+	#result {
+		font-weight: bold;
+		font-size: 1.4em;
+		text-align: center;
+		margin: 10px 0;
+	}
+	
+	#actionsContainer {
+		text-align: center;
+	}
+
+	#swap {
+		cursor: pointer;
+		margin-left: 8px;
+	}
+
+	#tzPopupList {
+		position: absolute;
+		top: 0; left: 0;
+		width: 300px;
+		height: 180px;
+		background: #fff;
+		border: solid 1px #999;
+		box-shadow: 1px 1px 3px #aaa;
+		font-family: arial, sans-serif;
+		font-size: 10pt;
+		overflow-y: scroll;
+	}
+	#tzPopupList ul {
+		margin: 0; padding: 0;
+		list-style: none;
+	}
+	#tzPopupList ul li {
+		padding: 4px;
+		cursor: pointer;
+	}
+
+	#tzPopupList ul li.hover {
+		background: #ddf;
+	}
+
+</style>
+
+<fieldset id="container">
+	<legend>TimeZone Fix</legend>
+
+	<table> <!-- use a table cause I'm lazy... -->
+		<tr>
+			<td>Time:</td>
+			<td><input type="text" id="time" /></td>
+			<td><button id="now" title="Set to current time &amp; timezone">Now</button></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td title="(only relevent in the case of ambiguous dates, e.g. 4/3/1980)"><input type="checkbox" id="usDates" /><label for="usDates">Assume U.S. date format</label></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>From:</td>
+			<td><input type="text" id="fromTZ" /></td>
+			<td rowspan="2"><img id="swap" src="swap.png" alt="Swap" title="Swap To/From" width="11" height="35" /></td>
+		</tr>
+		<tr>
+			<td>To:</td>
+			<td><input type="text" id="toTZ" /></td>
+		</tr>
+	</table>
+
+	<div style="clear: both;"></div>
+	<div id="result"></div>
+	<div id="actionsContainer" style="display: none;">
+		<button id="applyToAll">Apply to all on page</button>
+	</div>
+</fieldset>
+
+<div id="tzPopupList" style="display: none;">
+	<ul></ul>
+</div>
+
+
+<script src="jquery-1.7.2.min.js"></script>
+<script src="popup.js"></script>
+
